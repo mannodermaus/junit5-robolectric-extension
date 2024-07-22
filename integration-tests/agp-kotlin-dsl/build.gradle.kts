@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kotlinxKover)
     alias(libs.plugins.detekt)
-    alias(libs.plugins.robolectricExtensionGradlePlugin)
+//    alias(libs.plugins.robolectricExtensionGradlePlugin)
 }
 
 android {
@@ -13,6 +13,12 @@ android {
 
     defaultConfig {
         minSdk = libs.versions.androidMinimumSdk.get().toInt()
+    }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
     }
 }
 
@@ -28,4 +34,9 @@ kotlin {
 dependencies {
     detektPlugins(libs.detektFormatting)
     detektPlugins(libs.detektRulesLibraries)
+
+    testImplementation(libs.robolectric)
+    testImplementation(libs.androidxTestCore)
+    testImplementation(libs.espresso)
+    testImplementation(libs.junit4)
 }

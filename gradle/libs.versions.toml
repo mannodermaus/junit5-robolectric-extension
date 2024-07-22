@@ -2,11 +2,13 @@
 androidBuildTools = "34.0.0"
 androidCompileSdk = "34"
 androidGradle = "8.4.1"
-androidMinimumSdk = "14"
+androidMinimumSdk = "19"
+androidxTestCore = "1.6.1"
 androidxTestExtJunit = "1.1.5"
 buildConfig = "5.3.5"
 detekt = "1.23.6"
 dokka = "1.9.20"
+espresso = "3.6.1"
 gradlePluginPublish = "1.2.1"
 guava = "33.2.1-jre"
 junit4 = "4.13.2"
@@ -23,9 +25,11 @@ sources = "sources"
 [libraries]
 androidGradle = { module = "com.android.tools.build:gradle", version.ref = "androidGradle" }
 androidGradleJava11 = { module = "com.android.tools.build:gradle", version = { require = "[7.0.0,8.0.0[", prefer = "7.4.2" } }
+androidxTestCore = { module = "androidx.test:core", version.ref = "androidxTestCore" }
 androidxTestExtJunit = { module = "androidx.test.ext:junit", version.ref = "androidxTestExtJunit" }
 detektFormatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 detektRulesLibraries = { module = "io.gitlab.arturbosch.detekt:detekt-rules-libraries", version.ref = "detekt" }
+espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
 guavaConstraint = { module = "com.google.guava:guava", version = { require = "[32.0.1-jre,]" } }
 junit4 = { module = "junit:junit", version.ref = "junit4" }
